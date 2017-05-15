@@ -40,7 +40,9 @@ class UsersController < ApplicationController
   end
 
   def destory
-    
+    User.find(params[:id]).destroy
+    flash[:success] = "User Account Deleted from System"
+    redirect_to users_url
   end
 
 
