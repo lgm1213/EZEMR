@@ -2,7 +2,7 @@
 
 one:
   first_name: MyString
-  middle: MyString
+  middle_initial: MyString
   last_name: MyString
   dob: MyString
   gender_cd: MyString
@@ -20,7 +20,7 @@ one:
 
 two:
   first_name: MyString
-  middle: MyString
+  middle_initial: MyString
   last_name: MyString
   dob: MyString
   gender_cd: MyString

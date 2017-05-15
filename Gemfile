@@ -38,6 +38,7 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'minitest', '~> 5.10', '!= 5.10.2'
 end
 
 group :development do
