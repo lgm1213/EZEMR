@@ -1,2 +1,9 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<% provide(:title, 'Account Update') %>
+<% provide(:button_text, 'Save Changes') %>
+<h1>Update User Info</h1>
+		
+<div class="row">
+	<div class="col-md6 col-md-offset-4">
+		<%= render 'form' %>
+	</div>
+</div>
