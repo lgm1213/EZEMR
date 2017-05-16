@@ -1,5 +1,5 @@
 module ApplicationHelper
-	 def us_states
+  def us_states
     [
       ['Alabama', 'AL'],
       ['Alaska', 'AK'],

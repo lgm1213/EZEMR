@@ -2,14 +2,17 @@
 	<%= f.label :username %>
 	<%= f.text_field :username, class: 'form-control' %>
   <br>
+  <%= f.label :email %>
+  <%= f.email_field :email, class: 'form-control' %>
+  <br>
 	<%= f.label :first_name %>
-	<%= f.email_field :first_name, class: 'form-control' %>
+	<%= f.text_field :first_name, class: 'form-control' %>
   <br>
 	<%= f.label :last_name %>
-	<%= f.email_field :last_name, class: 'form-control' %>
+	<%= f.text_field :last_name, class: 'form-control' %>
   <br>
 	<%= f.label :middle_initial %>
-	<%= f.email_field :middle_initial, class: 'form-control' %>
+	<%= f.text_field :middle_initial, class: 'form-control' %>
   <br>
 	<%= f.radio_button :gender_cd, 0 %>
   <%= f.label :gender_cd, "Male" %>
@@ -26,7 +29,7 @@
   <%= f.text_field :address, class: 'form-control' %>
   <br>
   <%= f.label :city %>
-  <%= f.text_field :city %>
+  <%= f.text_field :city, class: 'form-control' %>
   <br>
   <%= f.label :state %>
   <%= f.select :state, options_for_select(us_states),{}, class: 'form-control' %>
@@ -35,9 +38,6 @@
   <br>
   <%= f.label :phone %>
   <%= f.text_field :phone, class: 'form-control' %>
-  <br>
-  <%= f.label :email %>
-  <%= f.text_field :email, class: 'form-control' %>
   <br>
 	<%= f.label :password %>
 	<%= f.password_field :password, class: 'form-control' %>
