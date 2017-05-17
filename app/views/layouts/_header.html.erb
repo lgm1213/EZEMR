@@ -1,11 +1,19 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "EZ EMR", root_path, id: "logo" %>
+    <%= link_to "Karol's Choice", root_path, id: "logo" %>
     <nav>
-      <ul class="nav navbar-nav navbar-right"> -->
+      <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Help", landing_help_path %></li>
+        <li><%= link_to "My Account", user_path(current_user) %></li>
+        <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+        <li><%= link_to "Log Out", logout_path %></li>
+      <% else %>
         <li><%= link_to "Home",    root_path %></li>
         <li><%= link_to "Help",    landing_help_path %></li>
-       
+        <li><%= link_to "Log in", login_path %></li>
+      <% end %>
       </ul>
     </nav>
   </div>

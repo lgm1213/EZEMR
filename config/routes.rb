@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
+  # static pages
+  root to: 'landing#home'
+  get 'landing/about'
+  get 'landing/help'
+  get 'landing/contact'
 
   # user routes
   resources :users
@@ -13,11 +12,13 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
   post '/users/id/edit' => 'users#edit'
 
+  # session routes
+  get 'session/new'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+  delete '/logout', to: 'sessions#destroy'
 
-  # static pages
-  root to: 'landing#home'
-  get 'landing/about'
-  get 'landing/help'
-  get 'landing/contact'
+
 
 end
