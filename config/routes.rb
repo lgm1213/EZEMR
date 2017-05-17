@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
 
-  get '_form/edit'
+  # provider routes
+  resources :providers
+  get '/providers/signup' => 'proviers#new'
+  post '/providers/signup' => 'providers#create'
+  post '/providers/id/edit' => 'providers#edit'
 
-  get '_form/index'
-
-  get '_form/new'
-
-  get '_form/show'
 
   # static pages
   root to: 'landing#home'

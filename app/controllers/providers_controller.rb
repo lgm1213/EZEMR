@@ -1,4 +1,7 @@
-class FormController < ApplicationController
+class ProvidersController < ApplicationController
+  def _form
+  end
+
   def edit
   end
 
