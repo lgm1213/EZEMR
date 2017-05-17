@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get '_form/edit'
+
+  get '_form/index'
+
+  get '_form/new'
+
+  get '_form/show'
+
   # static pages
   root to: 'landing#home'
   get 'landing/about'
