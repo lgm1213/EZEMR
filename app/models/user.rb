@@ -1,14 +1,13 @@
 class User < ApplicationRecord
-	before_save :downcase_email
-	validates :username, presence: true, length: { maximum: 30 }
+  attr_accessor :remember_token, :activation_token, :reset_token
+  before_save :downcase_email
+  before_create :create_activation_digest
+  validates :username, presence: true, length: { maximum: 30 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
   validates :gender_cd, presence: true
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
   has_secure_password
-
 
 	#uses simple_enu gemm
   as_enum :gender, :Female => 1, :Male => 0

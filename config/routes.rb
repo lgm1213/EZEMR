@@ -19,6 +19,16 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   delete '/logout', to: 'sessions#destroy'
 
+  # password reset
+  get 'password_resets/new'
+  get 'password_resets/edit'
+
+  # account acctivation
+  resources :account_activations, only: [:edit]
+
+# password resets
+  resources :password_resets, only: [:new, :create, :edit, :update]
+
 
 
 end
