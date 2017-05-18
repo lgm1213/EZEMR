@@ -1,2 +1,16 @@
-<h1>Providers#show</h1>
-<p>Find me in app/views/providers/show.html.erb</p>
+<% provide(:title, @provider.username) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @provider.username %>
+        <br>
+        <%= @provider.first_name %>
+        <br>
+        <%= @provider.last_name %>
+        <br>
+        <%= @provider.gender %>
+      </h1>
+    </section>
+  </aside>
+</div>
