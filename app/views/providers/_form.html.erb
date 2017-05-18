@@ -1,2 +1,54 @@
-<h1>Providers#_form</h1>
-<p>Find me in app/views/providers/_form.html.erb</p>
+<%= form_for(@providers) do |f| %>
+  <div class="col-xs-6">
+  	
+	<%= f.label :username %>
+	<%= f.text_field :username, class: 'form-control' %>
+  <br>
+  <%= f.label :email %>
+  <%= f.email_field :email, class: 'form-control' %>
+  <br>
+	<%= f.label :first_name %>
+	<%= f.text_field :first_name, class: 'form-control' %>
+  <br>
+	<%= f.label :last_name %>
+	<%= f.text_field :last_name, class: 'form-control' %>
+  <br>
+	<%= f.label :middle_initial %>
+	<%= f.text_field :middle_initial, class: 'form-control' %>
+  <br>
+	<%= f.radio_button :gender_cd, 0 %>
+  <%= f.label :gender_cd, "Male" %>
+  <%= f.radio_button :gender_cd, 1 %>
+  <%= f.label :gender_cd, "Female" %>
+  <br>
+  <br>
+  <%= f.label :Date_of_birth %><br>
+  <%= f.date_select :dob, start_year: 1900, order: [:month, :day, :year] %>
+  <br>
+  <%= f.label :Social_Security_Number %>
+  <%= f.text_field :ssn, class: 'form-control' %>
+  <br>
+  <%= f.label :address %>
+  <%= f.text_field :address, class: 'form-control' %>
+  <br>
+  <%= f.label :city %>
+  <%= f.text_field :city, class: 'form-control' %>
+  <br>
+  <%= f.label :state %>
+  <%= f.select :state, options_for_select(us_states),{}, class: 'form-control' %>
+  <br>
+  <%= f.label :zip %>:<%= f.text_field :zip, class: 'form-control' %>
+  <br>
+  <%= f.label :phone %>
+  <%= f.text_field :phone, class: 'form-control' %>
+  <br>
+	<%= f.label :password %>
+	<%= f.password_field :password, class: 'form-control' %>
+  <br>
+	<%= f.label :password_confirmation, "Confirmation" %>
+	<%= f.password_field :password_confirmation, class: 'form-control' %>
+  <br>
+  <br>
+	<%= f.submit yield(:button_text), class: 'btn btn-primary' %>
+  </div>
+<% end %> 
