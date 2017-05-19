@@ -17,7 +17,7 @@ class ProvidersController < ApplicationController
     if @provider.save
       # @user.sent_activation_email
       flash[:success] = "Welcome to EZ EHR"
-      redirect_to root_url
+      redirect_to @provider
     else
       render 'new'
     end
@@ -46,7 +46,7 @@ class ProvidersController < ApplicationController
   def destory
     Provider.find(params[:id]).destroy
     flash[:success] = "User Account Deleted from System"
-    redirect_to users_url
+    redirect_to providers_url
   end
 
 private
@@ -56,7 +56,7 @@ private
   end
   
   def provider_params
-    params.require(:provider).permit(:username, :first_name, :last_name, :middle_initial, :email, :password, :password_confirmation, :gender_cd, :phone, :address, :city, :zip, :state, :npi)
+    params.require(:provider).permit(:title, :username, :first_name, :last_name, :middle_initial, :email, :password, :password_confirmation, :gender_cd, :phone, :address, :city, :zip, :state, :npi, :speciality, :fax_number)
   end
 
   #confirm user is logged in

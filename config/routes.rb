@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   # provider routes
   resources :providers
-  get '/providers/signup' => 'proviers#new'
+  get '/providers/signup' => 'providers#new'
   post '/providers/signup' => 'providers#create'
   post '/providers/id/edit' => 'providers#edit'
 

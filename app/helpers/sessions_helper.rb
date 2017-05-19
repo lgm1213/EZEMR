@@ -24,13 +24,13 @@ module SessionsHelper
 
   # returns current logged in provider (if any are logged in)
   def current_provider
-    if (provider_id = session[:user_id])
-      @current_provider ||= Provider.find_by(id: session[:user_id])
-    elsif (user_id = cookies.signed[:user_id])
-      user = User.find_by(id: user_id)
+    if (provider_id = session[:provider_id])
+      @current_provider ||= Provider.find_by(id: session[:provider_id])
+    elsif (user_id = cookies.signed[:provider_id])
+      user = User.find_by(id: provider_id)
       if user && user.authenticated?(:remember, cookies[:remember_token])
-        log_in user
-        @current_user = user
+        log_in provider
+        @current_provider = provider
       end
     end
   end
