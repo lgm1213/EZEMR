@@ -1,6 +1,6 @@
 class ProvidersController < ApplicationController
   before_action :set_provider, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_provider, only: [:index, :edit, :update, :destroy]
+  # before_action :logged_in_provider, only: [:index, :edit, :update, :destroy]
   before_action :correct_provider, only: [:edit, :update]
   before_action :admin_user, only: [:destroy]
   
@@ -72,6 +72,10 @@ private
   def correct_provider
     @provider = Provider.find(params[:id])
     redirect_to(root_url) unless current_provider?(@provider)
+  end
+
+  def admin_provider
+    redirect_to(root_url) unless current_provider.admin?
   end
 
 end

@@ -1,2 +1,41 @@
-<h1>Providers#index</h1>
-<p>Find me in app/views/providers/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<h1>Provider</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>  providername   </th>
+      <th>  Last Name  </th>
+      <th>  First Name </th>
+      <th>  Middle Initial </th>
+      <th>  Gender  </th>
+      <th>  NPI </th>
+      <th>  Address </th>
+      <th>  City </th>
+      <th>  State </th></td>
+      <th>  Zip Code </th>
+      <th>  Phone </th>
+      <th>  Email </th>
+      <th>  Activated At  </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody class= 'table-striped'>
+    <% @providers.each do |provider| %>
+      <tr>
+        <td><%= provider.username %>  </td>
+        <td><%= provider.last_name %>  </td>
+        <td><%= provider.first_name %>  </td>
+        <td><%= provider.middle_initial %>  </td>
+        <td><%= provider.gender_cd %>  </td>
+        <td><%= link_to 'Show', provider %></td>
+        <td><%= link_to 'Edit', edit_provider_path(provider) %></td>
+        <td><%= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'New Provider', new_provider_path %>

@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   # provider routes
   resources :providers
-  get '/providers/signup' => 'providers#new'
-  post '/providers/signup' => 'providers#create'
-  post '/providers/id/edit' => 'providers#edit'
+  # get '/providers/new' => 'providers#new'
+  # post '/providers/signup' => 'providers#create'
+  # post '/providers/id/edit' => 'providers#edit'
 
 
   # static pages
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   post '/users/id/edit' => 'users#edit'
 
   # session routes
-  get 'session/new'
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
