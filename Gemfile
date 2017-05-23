@@ -37,7 +37,7 @@ gem 'byebug', platform: :mri
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'minitest', '~> 5.10', '!= 5.10.2'
+  gem 'minitest', '~> 5.10'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 end
 
@@ -59,3 +59,4 @@ gem 'hirb'
 # search function gem for PostGres
 gem 'pg_search'
 
+gem "rails-erd"

@@ -1,13 +1,17 @@
 class Provider < ApplicationRecord
-	have_many :medical_entries
+	has_many :medical_entries, :dependent => :destroy
+	has_many :medical_records, through: :medical_entries
+
+
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
-  validates :username, presence: true, length: { maximum: 30 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :username, presence: true, length: { maximum: 30 }
   validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
   validates :gender_cd, presence: true
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  
   has_secure_password
 
 
